@@ -56,16 +56,16 @@ export class UserComponent implements OnChanges, OnInit , DoCheck, AfterContentI
     }
     
     
-    ngAfterContentChecked(): void {
-      this.after=this.after+1;
-      console.log( this.after,'ngAfterContentChecked');      
-    }
-    
-    
     ngAfterContentInit(): void {
       this.check=this.check+1;
       console.log( this.check,'ngAfterContentInit');      
       
+    }
+    
+    
+    ngAfterContentChecked(): void {
+      this.after=this.after+1;
+      console.log( this.after,'ngAfterContentChecked');      
     }
     
     
@@ -78,7 +78,9 @@ export class UserComponent implements OnChanges, OnInit , DoCheck, AfterContentI
       console.log( 'ngAfterViewChecked');   
 
     }
+    ngDestroy():void{
 
+}
     getUserName(name:string){
       return of(  name+' jai ho')
     }
