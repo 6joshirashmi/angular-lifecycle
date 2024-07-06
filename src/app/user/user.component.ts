@@ -9,6 +9,7 @@ import { of } from 'rxjs';
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
+
 export class UserComponent implements OnChanges, OnInit , DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked{
   @Input() user!:User;
   username!:string;
@@ -20,7 +21,7 @@ export class UserComponent implements OnChanges, OnInit , DoCheck, AfterContentI
   
   ngOnChanges(changes: SimpleChanges) {
     const user = changes['user'];
-    
+    console.log(user); 
     if(!user)
       {
         return user;
@@ -28,38 +29,32 @@ export class UserComponent implements OnChanges, OnInit , DoCheck, AfterContentI
       const { currentValue, previousValue, firstChange } = user;
       console.log(currentValue, previousValue, firstChange,'hhhhhhhhhhhhhhh'); 
       this.change=this.change+1;
-      console.log(this.change ,'ngOnChanges');      
-      
+      console.log(this.change ,'ngOnChanges');   
     }
     
     
-    ngOnInit(): void {
-      
+    ngOnInit(): void {      
       this.getUserName(this.user.name).subscribe((d)=>{
         this.username=d;
       })
       console.log('shree  '+this.username);
       this.it=this.it+1;
-      console.log(this.it,'ngOnInit');
-      
+      console.log(this.it,'ngOnInit');      
     }
     
-    ngDoCheck(): void {
-      
+    ngDoCheck(): void {      
       this.getUserName(this.user.name).subscribe((d)=>{
         this.username=d;
       })
       console.log(this.username);
       this.do=this.do+1;
-      console.log(this.do,'ngDoCheck');
-      
+      console.log(this.do,'ngDoCheck');      
     }
     
     
     ngAfterContentInit(): void {
       this.check=this.check+1;
-      console.log( this.check,'ngAfterContentInit');      
-      
+      console.log( this.check,'ngAfterContentInit');        
     }
     
     
@@ -69,18 +64,17 @@ export class UserComponent implements OnChanges, OnInit , DoCheck, AfterContentI
     }
     
     
-    ngAfterViewInit(): void {
-      
+    ngAfterViewInit(): void {      
       console.log( 'ngAfterViewInit');   
     }
     
     ngAfterViewChecked(): void {
-      console.log( 'ngAfterViewChecked');   
-
+      console.log( 'ngAfterViewChecked'); 
     }
-    ngDestroy():void{
 
-}
+    ngDestroy():void{
+    }
+
     getUserName(name:string){
       return of(  name+' jai ho')
     }
