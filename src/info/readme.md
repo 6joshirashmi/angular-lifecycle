@@ -16,7 +16,7 @@ If your component has no inputs or you use it without providing any inputs, the 
 ngOnInit()	Initialize the directive or component after Angular first displays the data-bound properties and sets the directive or component's input properties.Called once, after the first ngOnChanges(). ngOnInit() is still called even when ngOnChanges() is not (which is the case when there are no template-bound inputs).
 
 
-ngDoCheck()	Detect and act upon changes that Angular can't or won't detect on its own. See details and example in Defining custom change detection in this document.	Called immediately after ngOnChanges() on every change detection run, and immediately after ngOnInit() on the first run.
+ngDoCheck()	Detect and act upon changes that Angular can't or won't detect on its own. 	Called immediately after ngOnChanges() on every change detection run, and immediately after ngOnInit() on the first run.
 
 
 ngAfterContentInit()	Respond after Angular projects external content into the component's view, or into the view that a directive is in. Called once after the first ngDoCheck().
@@ -97,24 +97,3 @@ It is called just before the angular app destroys everything like the directive 
 ngDestroy(){
 console.log(“ngDestroy running”);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -17,4 +17,46 @@ export class AppComponent {
   setname(name:string){
 this.user.name=name;
   }
+
+  ngOnChanges() {
+   
+      console.log('app ngOnChanges');   
+    }
+    
+    
+    ngOnInit(): void {      
+      
+      console.log('app ngOnInit');      
+    }
+    
+    ngDoCheck(): void {      
+      
+      
+      console.log('app ngDoCheck');      
+    }
+    
+    
+    ngAfterContentInit(): void {
+      
+      console.log( 'app ngAfterContentInit');        
+    }
+    
+    
+    ngAfterContentChecked(): void {
+      
+      console.log('app ngAfterContentChecked');      
+    }
+    
+    
+    ngAfterViewInit(): void {      
+      console.log( 'app ngAfterViewInit');   
+    }
+    
+    ngAfterViewChecked(): void {
+      console.log( 'app ngAfterViewChecked'); 
+    }
+
+    ngDestroy():void{
+    }
+
 }
